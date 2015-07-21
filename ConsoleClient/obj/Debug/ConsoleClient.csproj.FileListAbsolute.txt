@@ -1,0 +1,8 @@
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\ConsoleClient.exe
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\ConsoleClient.pdb
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\obj\Debug\ConsoleClient.exe
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\obj\Debug\ConsoleClient.pdb
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\cqClient.dll
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\cqClient.pdb
+c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache

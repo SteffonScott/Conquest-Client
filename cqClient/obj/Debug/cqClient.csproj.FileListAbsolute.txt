@@ -1,0 +1,5 @@
+c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\bin\Debug\cqClient.dll
+c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\bin\Debug\cqClient.pdb
+c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\obj\Debug\cqClient.dll
+c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\obj\Debug\cqClient.pdb
+C:\Users\Kaelozim\Documents\Visual Studio 2013\Projects\cqClient\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache

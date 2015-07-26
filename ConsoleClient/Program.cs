@@ -19,6 +19,7 @@ namespace ConsoleClient
             client.Connect();
             
             client.Login("Gemstone3");
+            client.Person();
 
             
 

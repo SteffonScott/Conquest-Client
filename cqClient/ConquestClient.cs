@@ -123,13 +123,20 @@ namespace cqClient
             if (response.message[0].id == "46")
             {
                 _loggedIn = true;
+                _token = response.token;
                 return true;
             }
             return false;
         }
         public void Person()
         {
+            XMLResponse response = new XMLResponse();
             SendCommand("Person");
+            do
+            {
+                response = FindResponse("Person");
+            }
+            while (response == null);
         }
         public XMLResponse FindResponse(string command)
         {

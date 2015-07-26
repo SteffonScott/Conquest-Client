@@ -3,3 +3,8 @@ c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\bin\De
 c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\obj\Debug\cqClient.dll
 c:\users\kaelozim\documents\visual studio 2013\Projects\cqClient\cqClient\obj\Debug\cqClient.pdb
 C:\Users\Kaelozim\Documents\Visual Studio 2013\Projects\cqClient\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\bin\Debug\cqClient.dll
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\bin\Debug\cqClient.pdb
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\obj\Debug\cqClient.dll
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\obj\Debug\cqClient.pdb

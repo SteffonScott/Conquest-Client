@@ -42,34 +42,52 @@ namespace cqClient
         private int _port { get; set; }
         private string _token { get; set; }
         public bool _loggedIn { get; set; }
-        private System.Net.Sockets.TcpClient _clientSocket { get; set; }
+        private Connection _connection { get; set; }
+        private List<XMLResponse> _serverMessages { get; set; }
 
         public ConquestClient(IPAddress gameIp, int port, string playerName = "Player")
         {
             _playerName = playerName;
             _token = "0123456789012345678901234567890";
-            _gameIp = gameIp;
-            _port = port;
-            _clientSocket = new System.Net.Sockets.TcpClient();
+            _connection = new Connection(gameIp, port);
+            _loggedIn = false;
+            _serverMessages = new List<XMLResponse>();
+
+            //Initialize the events
+            _connection.DataReceived += new Connection.delDataReceived(connection_DataReceived);
+            _connection.ConnectionStatusChanged += new Connection.delConnectionStatusChanged(connection_ConnectionStatusChanged);
         }
 
         public bool Connect()
         {
-            _clientSocket.Connect(_gameIp, _port);
-            return _clientSocket.Connected;
+
+                _connection.Connect();
+                do
+                {
+                    var _delayTimer = new System.Timers.Timer();
+                    _delayTimer.Interval = 5000;
+                    _delayTimer.Start();
+                }
+                while (_connection.ConnectionState != Connection.ConnectionStatus.Connected);
+
+            return (_connection.ConnectionState == Connection.ConnectionStatus.Connected);
         }
+
+        /// <summary>
+        /// Build XML command using string and send to server if connection is established.
+        /// </summary>
         public void SendCommand(string _command, string[] _parameters = null)
         {
-            NetworkStream activeStream;
             string xmlCommand = BuildCommand(_command, _parameters);
             Byte[] data = System.Text.UTF8Encoding.ASCII.GetBytes(xmlCommand);
-  
-            if (this._clientSocket.Connected == false)
+
+            if (this._connection.ConnectionState != Connection.ConnectionStatus.Connected)
                 return;
-            activeStream = _clientSocket.GetStream();
-            if (activeStream.CanWrite)
-                activeStream.Write(data, 0, data.Length);
+            _connection.Send(xmlCommand);
         }
+        /// <summary>
+        /// Build XML object and format the string output to server specification
+        /// </summary>
         public string BuildCommand(string _command, string[] _parameters = null)
         {
             int id = 1;
@@ -91,53 +109,32 @@ namespace cqClient
                     id++;
                 }
             }
-            Console.WriteLine(conquest.ToString(SaveOptions.DisableFormatting));
             return String.Format(conquest.ToString(SaveOptions.DisableFormatting) + Environment.NewLine);
-        }
-        public string ReadData()
-        {
-            string buffer = null;
-            byte[] oneByte = new byte[1];
-            char oneChar;
-            NetworkStream stream;
-            int total = 0;
-
-            if (!this._clientSocket.Connected)
-                return null;
-            stream = this._clientSocket.GetStream();
-
-            if (stream.CanRead)
-            {
-                do
-                {
-                    total = stream.Read(oneByte, 0, 1);
-                    oneChar = Convert.ToChar(System.Text.Encoding.ASCII.GetString(oneByte, 0, 1));
-                    buffer = buffer + oneChar;
-                    if (oneByte[0] == 10)
-                        total = 0;
-                }
-                while (oneByte[0] != 10 || total != 0);
-                if (buffer != null && buffer.IndexOf("</Conquest>") < 1)
-                {
-                    buffer = null;
-                }
-            }
-            return buffer;
         }
         public bool Login(string password)
         {
+            XMLResponse response = new XMLResponse();
             SendCommand("Validate", new string[] { password });
-            XMLResponse response = ParseResponse(ReadData());
-            _loggedIn = true;
-
+            do
+            {
+                response = FindResponse("Validate");
+            }
+            while (response == null);
             if (response.message[0].id == "46")
             {
                 _loggedIn = true;
-                Console.WriteLine("Login successful! Playing as {0}", _playerName);
                 return true;
             }
-            Console.WriteLine("Login failed! Please re-attempt validation.");
             return false;
+        }
+        public void Person()
+        {
+            SendCommand("Person");
+        }
+        public XMLResponse FindResponse(string command)
+        {
+            XMLResponse response = _serverMessages.FirstOrDefault(r => r.command == command);
+            return response;
         }
         public XMLResponse ParseResponse(string _response)
         {
@@ -170,11 +167,16 @@ namespace cqClient
 
             return response;
         }
-        public void testMethod1()
+        void connection_ConnectionStatusChanged(Connection sender, Connection.ConnectionStatus status)
         {
-            Console.WriteLine(BuildCommand("Person"));
+            Console.WriteLine("Connection: " + status.ToString() + Environment.NewLine);
         }
-     
+        void connection_DataReceived(Connection sender, object data)
+        {
+            //Interpret the received data object as XMLReponse
+            XMLResponse response = ParseResponse(data as string);
+            _serverMessages.Add(response);
+        }
     }
 }
 

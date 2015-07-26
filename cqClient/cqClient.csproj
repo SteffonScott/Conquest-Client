@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Communication\Connection.cs" />
+    <Compile Include="Communication\Parser.cs" />
     <Compile Include="ConquestClient.cs" />
     <Compile Include="Commands\iGameCommand.cs" />
     <Compile Include="Commands\oGameCommand.cs" />

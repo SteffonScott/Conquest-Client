@@ -6,3 +6,11 @@ c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\o
 c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\cqClient.dll
 c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\bin\Debug\cqClient.pdb
 c:\Users\Kaelozim\documents\visual studio 2013\Projects\cqClient\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\obj\Debug\ConsoleClient.pdb
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\bin\Debug\cqClient.dll
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\bin\Debug\cqClient.pdb
+C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache

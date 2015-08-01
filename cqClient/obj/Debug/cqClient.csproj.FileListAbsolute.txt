@@ -8,3 +8,8 @@ C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\bin\Debug\cqClient.p
 C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache
 C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\obj\Debug\cqClient.dll
 C:\Users\Kaelozim\Documents\GitHub\Conquest-Client\cqClient\obj\Debug\cqClient.pdb
+C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\bin\Debug\cqClient.dll
+C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\bin\Debug\cqClient.pdb
+C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache
+C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\obj\Debug\cqClient.dll
+C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\obj\Debug\cqClient.pdb

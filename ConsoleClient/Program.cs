@@ -14,11 +14,20 @@ namespace ConsoleClient
         {
             Console.WriteLine("WELCOME TO CONQUEST!");
             
+            // Insantiate the client and populate properties with the server's IP, port and the character name to use.
             ConquestClient client = new ConquestClient(IPAddress.Parse("99.7.194.3"), 9999, "ArchElf");
 
-            client.Connect();
-            
-            client.Login("Gemstone3");
+            // Attempt connection with server and report success or failure.
+            if (client.Connect())
+                Console.WriteLine("Connection to game server established.");
+            else { Console.WriteLine("Connection to game server failed."); }
+
+            // Login to the server and report success or failure.
+            if (client.Login("Gemstone3"))
+                Console.WriteLine("Login with current credentials succeeded.");
+            else { Console.WriteLine("Login with current credentials failed."); }
+
+            // Retrieve player stats and populate the "_player" property with current values.
             client.Person();
 
             

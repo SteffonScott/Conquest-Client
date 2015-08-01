@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using System.Net.Sockets;
 using System.IO;
 using Microsoft.VisualBasic;
+using cqClient.Game_Objects;
 
 namespace cqClient
 {
@@ -44,6 +45,7 @@ namespace cqClient
         public bool _loggedIn { get; set; }
         private Connection _connection { get; set; }
         private List<XMLResponse> _serverMessages { get; set; }
+        private Player _player { get; set; }
 
         public ConquestClient(IPAddress gameIp, int port, string playerName = "Player")
         {
@@ -52,12 +54,17 @@ namespace cqClient
             _connection = new Connection(gameIp, port);
             _loggedIn = false;
             _serverMessages = new List<XMLResponse>();
+            _player = new Player();
 
             //Initialize the events
             _connection.DataReceived += new Connection.delDataReceived(connection_DataReceived);
             _connection.ConnectionStatusChanged += new Connection.delConnectionStatusChanged(connection_ConnectionStatusChanged);
         }
 
+        /// <summary>
+        /// Attempt to establish a connection with the game server. Returns true/false to indicate success.
+        /// </summary>
+        /// <returns></returns>
         public bool Connect()
         {
 
@@ -72,7 +79,6 @@ namespace cqClient
 
             return (_connection.ConnectionState == Connection.ConnectionStatus.Connected);
         }
-
         /// <summary>
         /// Build XML command using string and send to server if connection is established.
         /// </summary>
@@ -111,6 +117,11 @@ namespace cqClient
             }
             return String.Format(conquest.ToString(SaveOptions.DisableFormatting) + Environment.NewLine);
         }
+        /// <summary>
+        /// Login to the server with string parameter as password (character name selected on object instantiation)
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool Login(string password)
         {
             XMLResponse response = new XMLResponse();
@@ -128,19 +139,39 @@ namespace cqClient
             }
             return false;
         }
+        /// <summary>
+        /// Populate player object with stats from server
+        /// </summary>
         public void Person()
         {
             XMLResponse response = new XMLResponse();
             SendCommand("Person");
+
             do
             {
                 response = FindResponse("Person");
             }
             while (response == null);
+
+            _player.kingdomName = response.message[0].body[0];
+            _player.race = response.message[1].body[0];
+            _player.level = response.message[1].body[1];
+            _player.name = response.message[1].body[2];
+            _player.movement = Convert.ToInt32(response.message[2].body[0].Substring(0, response.message[2].body[0].IndexOf(" ")));
+            _player.structures = Convert.ToInt32(response.message[2].body[1].Substring(0, response.message[2].body[1].IndexOf(" ")));
+            _player.gold = Convert.ToInt32(response.message[2].body[2].Substring(0, response.message[2].body[2].IndexOf(" ")));
+            _player.land = Convert.ToInt32(response.message[3].body[0].Substring(0, response.message[3].body[0].IndexOf(" ")));
+            _player.peasants = Convert.ToInt32(response.message[3].body[1].Substring(0, response.message[3].body[1].IndexOf(" ")));
+            _player.food = Convert.ToInt32(response.message[3].body[2].Substring(0, response.message[3].body[2].IndexOf(" ")));
+            _player.city = response.message[5].body[0];
+            _player.continent = response.message[5].body[1];
+            _player.experience = Convert.ToInt32(response.message[6].body[0]);
+            _player.protection = (response.message[6].body[1] == "YES") ? true : false;
+            _player.taxes = response.message[6].body[2];
         }
         public XMLResponse FindResponse(string command)
         {
-            XMLResponse response = _serverMessages.FirstOrDefault(r => r.command == command);
+            XMLResponse response = _serverMessages.Find(message => message.command == command);
             return response;
         }
         public XMLResponse ParseResponse(string _response)
@@ -176,7 +207,7 @@ namespace cqClient
         }
         void connection_ConnectionStatusChanged(Connection sender, Connection.ConnectionStatus status)
         {
-            Console.WriteLine("Connection: " + status.ToString() + Environment.NewLine);
+           
         }
         void connection_DataReceived(Connection sender, object data)
         {

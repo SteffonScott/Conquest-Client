@@ -45,6 +45,7 @@
     <Compile Include="ConquestClient.cs" />
     <Compile Include="Commands\iGameCommand.cs" />
     <Compile Include="Commands\oGameCommand.cs" />
+    <Compile Include="Game Objects\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

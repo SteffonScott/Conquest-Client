@@ -14,7 +14,7 @@ namespace ConsoleClient
         {
             Console.WriteLine("WELCOME TO CONQUEST!");
             
-            // Insantiate the client and populate properties with the server's IP, port and the character name to use.
+            // Insantiate the client and populate properties with the server's IP, port and the character name to use.w
             ConquestClient client = new ConquestClient(IPAddress.Parse("99.7.194.3"), 9999, "ArchElf");
 
             // Attempt connection with server and report success or failure.
@@ -28,7 +28,7 @@ namespace ConsoleClient
             else { Console.WriteLine("Login with current credentials failed."); }
 
             // Retrieve player stats and populate the "_player" property with current values.
-            client.Person();
+            // client.UpdateStats();
 
             
 

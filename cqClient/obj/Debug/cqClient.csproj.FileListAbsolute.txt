@@ -13,3 +13,8 @@ C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Co
 C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache
 C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\obj\Debug\cqClient.dll
 C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\cqClient\obj\Debug\cqClient.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\cqClient\bin\Debug\cqClient.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\cqClient\bin\Debug\cqClient.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\cqClient\obj\Debug\cqClient.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\cqClient\obj\Debug\cqClient.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\cqClient\obj\Debug\cqClient.pdb

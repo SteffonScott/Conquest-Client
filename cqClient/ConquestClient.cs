@@ -121,7 +121,7 @@ namespace cqClient
         /// Login to the server with string parameter as password (character name selected on object instantiation)
         /// </summary>
         /// <param name="password"></param>
-        /// <returns></returns>
+        /// <returns></returns>qw
         public bool Login(string password)
         {
             XMLResponse response = new XMLResponse();
@@ -135,14 +135,16 @@ namespace cqClient
             {
                 _loggedIn = true;
                 _token = response.token;
+                UpdateStats();
                 return true;
             }
+            UpdateStats();
             return false;
         }
         /// <summary>
-        /// Populate player object with stats from server
+        /// Poqwpulate player object with stats from server
         /// </summary>
-        public void Person()
+        public void UpdateStats()
         {
             XMLResponse response = new XMLResponse();
             SendCommand("Person");

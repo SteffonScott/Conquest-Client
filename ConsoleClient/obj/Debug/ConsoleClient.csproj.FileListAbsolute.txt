@@ -22,3 +22,11 @@ C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Co
 C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\ConsoleClient\bin\Debug\cqClient.dll
 C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\ConsoleClient\bin\Debug\cqClient.pdb
 C:\Users\Stanley\Documents\Visual Studio 2015\Projects\Conquest-Client-master\Conquest-Client-master\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\obj\Debug\ConsoleClient.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\bin\Debug\cqClient.dll
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\bin\Debug\cqClient.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\Conquest-Client\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
